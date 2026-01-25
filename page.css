@@ -1,0 +1,345 @@
+
+
+
+.header{
+  position: fixed;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #20170E;
+  width: 100%;
+ 
+}
+
+.tit{
+    color: #F3DFA0;
+    margin-bottom: 15px;
+}
+
+.section{
+    margin-top: 200px;
+}
+
+.btn-carrinho {
+  background:#F3DFA0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+
+}
+
+.cart{
+    width: 20px;
+    height:20px;
+   
+}
+
+.logo{
+    color: #F3DFA0;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+
+
+.box-div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.box_nav{
+    color: #20170E;
+    padding-left: 20px;
+
+   
+   
+}
+
+.box_nav nav {
+   
+    
+    display: flex;
+ 
+}
+
+.box_nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3DFA0 ;
+    width: 80px;
+    height: 32px;
+    border-radius: 20px;
+    padding: 10px 8px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.img-logo{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+ 
+}
+
+.hero{
+      
+}
+
+
+.rodape{ 
+ 
+    color: #ffffff;
+}
+
+ 
+
+.card_section h3 {
+    color: #F3DFA0;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+article{
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #EAEAEA;
+    margin-bottom: 25px;
+
+}
+
+.card-content{
+    padding-right: 10px;
+}
+
+.card-img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+article h4{
+    margin-bottom: 6px;
+      
+}
+
+
+.article_p{
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.span_p{
+    background-color:  #F3DFA0 ;
+    color: #20170E;
+    width: 80px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+   
+}
+
+.div1{
+   
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+ 
+    
+    
+}
+
+.div1 img{
+   width: 14px;
+ 
+}
+
+.span_p span{
+    font-size: 10px;
+}
+article img{
+   
+  border-radius: 5px;
+   width: 160px;
+}
+
+.radio{
+    background-color: #F3DFA0  ;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.rodape{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.rodape a {
+    font-weight: bolder;
+}
+
+
+/* Carrinho */
+.carrinho {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  color: white;
+  background-color: #20170E; /* fundo branco */
+  box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.carrinho.ativo {
+  right: 0;
+}
+
+.carrinho ul {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.carrinho li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.carrinho-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-fechar {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.total {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-whatsapp {
+  width: 100%;
+  padding: 12px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lista-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.lista-car div{
+
+ display: flex;
+ align-items: center;
+ gap: 8px;
+}
+
+
+
+
+.icon{
+    width: 24px;
+    height: 24px;
+}
+
+
+.carrinho-header{
+  background-color: #F3DFA0  ;
+  height: 45px;
+  padding: 10px;
+  border-radius: 6px;
+  color: black;
+}
+
+.carrinho-header h2{
+ 
+    text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.lista-car span{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-menos{
+    background-color: #F3DFA0  ;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-mais{
+
+    background-color: #F3DFA0  ;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.btn-remover img{
+
+    background-color: #F3DFA0  ;
+    border-radius: 50%;
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    
+}

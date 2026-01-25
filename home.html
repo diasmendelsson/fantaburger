@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/page.css" rel="stylesheet">
+     <link href="/global.css" rel="stylesheet">
+    <title>Fanta Burger</title>
+</head>
+<body>
+
+     <!-- TOPO DO SITE -->
+  <header class="header">
+
+    <div class="box_header">
+      <div class="box-div">
+       <img class="img-logo" src="https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/6c653cef-72c9-45da-9b3b-f67941923565/202512051908_fA3E_.jpeg" />
+       <h1 class="logo">Fanta Burguer</h1>
+      </div>
+
+      <button class="btn-carrinho" onclick="toggleCarrinho()"><img class="cart" src="/public/cart.png" alt="imagem de carrinho"/>
+       Carrinho (<span id="qtdCarrinho">0</span>)
+      </button>
+    </div>
+    
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+
+    <!-- HERO 
+     <header class="hero">
+      <h2><span> O melhor sabor da cidade</h2>
+      <p>Hamburguers artesanais feitos na brasa</p>
+      <a href="#cardapio">Ver cardápio</a>
+    </header>
+    -->
+
+    <!-- SEÇÃO DE CARDÁPIO -->
+    <section class="section" id="cardapio">
+
+    <h2 class="tit">Combos</h2>
+       
+    </section>
+
+
+  </main>
+
+  <div class="carrinho" id="carrinho">
+    <div class="carrinho-header">
+      <h2><img class="cart" src="/public/cart.png" alt="imagem de carrinho"/> Seu Pedido</h2>
+      <button class="btn-fechar" onclick="toggleCarrinho()"><img class="icon" src="/public/close.svg" alt="imagem de x com circculo" /></button>
+    </div>
+
+    <ul id="listaCarrinho"></ul>
+    <p class="total">Total: <span id="total">0.00</span></p>
+
+    <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+      📲 Pedir no WhatsApp
+    </button>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <a href="#"> Desenvolvido por MD Infraestrutura e Tecnologia</a>
+    <p>© 2026 Fanta Burger</p>
+  </footer>
+  
+<script src="script.js"></script>
+</body>
+</html>

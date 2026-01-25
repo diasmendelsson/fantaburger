@@ -1,0 +1,97 @@
+/* =========================
+   Reset + estilo global
+   ========================= */
+
+/* Box-sizing mais intuitivo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body: fonte padrão, background neutro, suavidade */
+body {
+  font-family: 'Roboto', sans-serif; /* fontes modernas */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;          /* cor base do texto */
+  background-color: #20170E; /* fundo branco */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main{
+    flex: 1;
+    margin-top: 30px;
+    padding: 0px 10px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit; /* mantém a cor do texto */
+  transition: color 0.2s;
+}
+a:hover {
+  color: #007bff; /* cor de destaque ao passar o mouse */
+}
+
+/* Imagens e vídeos responsivos */
+img, video {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Tabelas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Inputs, buttons e selects */
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Botões padrão */
+button {
+  cursor: pointer;
+}
+
+/* Cabeçalhos */
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Para evitar scroll horizontal indesejado */
+html, body {
+  overflow-x: hidden;
+}
