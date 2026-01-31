@@ -56,8 +56,15 @@ const cardapio = document.getElementById("cardapio");
 const listaCarrinho = document.getElementById("listaCarrinho");
 const totalEl = document.getElementById("total");
 const qtdCarrinho = document.getElementById("qtdCarrinho");
+const taxaEntregaEl = document.getElementById("taxaEntrega");
 
 let carrinho = [];
+
+let tipoPedido = "retirada";
+let enderecoEntrega = "";
+let distanciaEntrega = 0;
+let taxaEntrega = 0;
+
 
 // Renderizar carrinho
 
@@ -102,31 +109,35 @@ function adicionarCarrinho(index){
 //Atualizar carrinho
 function atualizarCarrinho(){
     listaCarrinho.innerHTML = "";
-    let total = 0;
+    let subtotal = 0;
     let quantidadeTotal = 0;
 
     carrinho.forEach((item, index) =>{
-
-        total += item.preco * item.qtd;
+        subtotal += item.preco * item.qtd;
         quantidadeTotal += item.qtd;
 
         listaCarrinho.innerHTML +=`
             <li class="lista-car">
               <span>${item.nome}</span>
               <div>
-                <button class="btn-menos" onclick="diminuir(${index})"><img class="icon" src="/public/minus.svg" alt="icone de menos"/></button>
+                <button class="btn-menos" onclick="diminuir(${index})"><img class="icon" src="/public/minus.svg"/></button>
                 <span>${item.qtd}</span>
-                <button class="btn-mais" onclick="aumentar(${index})"><img class="icon" src="/public/plus.svg" alt="icone de mais"/></button>
-                <button class="btn-remover" onclick="remover(${index})"><img class="icon" src="/public/trash.svg" alt="icone de lixeira"/></button>
+                <button class="btn-mais" onclick="aumentar(${index})"><img class="icon" src="/public/plus.svg"/></button>
+                <button class="btn-remover" onclick="remover(${index})"><img class="icon" src="/public/trash.svg"/></button>
               </div>
             </li> 
         `
     })
 
-      totalEl.textContent = formatarReal(total);
-      qtdCarrinho.textContent = quantidadeTotal;
-}
+    calcularTaxaEntrega();
 
+    const totalFinal = subtotal + taxaEntrega;
+
+    totalEl.textContent = formatarReal(totalFinal);
+    qtdCarrinho.textContent = quantidadeTotal;
+
+    taxaEntregaEl.textContent = formatarReal(taxaEntrega);
+}
 
 // Controles 
 function aumentar(index) {
@@ -148,8 +159,33 @@ function remover(index){
     atualizarCarrinho();
 }
 
+function escolherRetirada() {
+  tipoPedido = "retirada";
+  distanciaEntrega = 0;
+  enderecoEntrega = "";
+  document.getElementById("boxDistancia").style.display = "none";
+  document.getElementById("boxEndereco").style.display = "none";
+  atualizarCarrinho();
+}
 
-// Abrir e fechar carrinho
+function escolherEntrega() {
+  tipoPedido = "entrega";
+  document.getElementById("boxDistancia").style.display = "block";
+  document.getElementById("boxEndereco").style.display = "block";
+  atualizarCarrinho();
+}
+
+function atualizarEndereco(valor) {
+  enderecoEntrega = valor;
+}
+
+function atualizarDistancia(valor) {
+  distanciaEntrega = Number(valor);
+  atualizarCarrinho();
+}
+
+
+  // Abrir e fechar carrinho
 
 function toggleCarrinho(){
     document.getElementById("carrinho").classList.toggle("ativo");
@@ -159,22 +195,48 @@ function toggleCarrinho(){
        : "none";
 }
 
+function calcularTaxaEntrega(){
+  if(tipoPedido === "entrega"){
+    if(distanciaEntrega > 2) {
+      taxaEntrega = 8;
+    } else{
+      taxaEntrega = 0;
+    }
+  }  else {
+    taxaEntrega = 0;
+  } 
+  return taxaEntrega;
+}
 
-// WhatsApp
+
+
 function enviarWhatsApp() {
   if (carrinho.length === 0) {
     alert("Carrinho vazio!");
     return;
   }
 
+  if (tipoPedido === "entrega" && (!enderecoEntrega || enderecoEntrega.trim() === "")) {
+    alert("Por favor, informe o endereço para entrega.");
+    return;
+  }
+
   let mensagem = "🛒 *Pedido*\n\n";
 
   carrinho.forEach(item => {
-    mensagem += `• ${item.nome} (${item.qtd}x) - R$ ${(item.preco * item.qtd).toFixed(2)}\n`;
+    mensagem += `• ${item.nome} (${item.qtd} x ) - ${formatarReal(item.preco * item.qtd)}\n`;
   });
 
-  mensagem += `\n💰 *Total:* ${totalEl.textContent}`;
+  mensagem += `\n📦 *Tipo:* ${tipoPedido === "entrega" ? "Entrega" : "Retirada"}`;
 
-  const url = `https://wa.me/${telefoneWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  if (tipoPedido === "entrega") {
+    mensagem += `\n📍 *Endereço:* ${enderecoEntrega}`;
+    mensagem += `\n📏 Distância: ${distanciaEntrega} km`;
+    mensagem += `\n🚚 Taxa de entrega: ${formatarReal(taxaEntrega)}`;
+  }
+
+  mensagem += `\n\n💰 *Total:* ${totalEl.textContent}`;
+
+  const url = `https://wa.me/${5517988159732}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }

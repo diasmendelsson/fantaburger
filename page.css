@@ -256,11 +256,16 @@ article img{
 .btn-whatsapp {
   width: 100%;
   padding: 12px;
-  background: #25d366;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: white;
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: 16px;
+  font-weight: bolder;
   cursor: pointer;
 }
 
@@ -342,4 +347,113 @@ article img{
     height: 20px;
     margin-left: 20px;
     
+}
+
+#boxDistancia {
+  display: none;
+}
+
+#boxEndereco {
+  display: none;
+}
+
+.tipo-pedido {
+  margin: 16px 0;
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+.tipo-titulo {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tipo-opcoes {
+  display: flex;
+  gap: 16px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.opcao input {
+  accent-color: #e63946; /* usa sua cor principal */
+}
+
+.distancia {
+  margin: 12px 0;
+  padding: 12px;
+  background: #fafafa;
+  color: black;
+  border-radius: 8px;
+}
+
+.distancia label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.distancia input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.distancia small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+
+.resumo {
+  margin-top: 16px;
+}
+
+.resumo .linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.total {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.endereco{
+  margin: 12px 0;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.endereco label{
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.endereco textarea{
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  color: black;
+  resize: none;
+  outline: none;
+  font-family: inherit;
 }
